@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Oh Yes Events | Premium Wedding & Event Planner</title>
+    <title>Oh Yes Events | Luxury Wedding & Event Planning</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
     <div class="container">
-        <!-- Premium Header with Vibrant Orange + Royal Blue -->
+        <!-- Header -->
         <div class="header">
             <div class="header-top">
                 <div class="logo-section">
@@ -21,463 +22,469 @@
                         <img src="logo.png" alt="Oh Yes Events Logo" class="company-logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-calendar-alt\'></i>';">
                     </div>
                     <div class="logo-text">
-                        <h1 class="premium-font">Oh Yes Events</h1>
+                        <h1 class="pacifico-font">Oh Yes Events</h1>
                         <p class="company-subtitle">Oh Yes Events Private Limited, Chennai, India & Dubai, UAE</p>
                         <p class="tagline">Your One-Stop Destination for Exceptional Events!</p>
                     </div>
                 </div>
                 <div class="contact-info">
-                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Varadarajan St, Kumudham Colony, Chromepet, Chennai - 600044</span></div>
-                    <div class="contact-item"><i class="fas fa-phone-alt"></i> <span>089397 59966</span></div>
+                    <div class="contact-item"><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/ohyeseventsofficial" target="_blank">@ohyeseventsofficial</a></div>
+                    <div class="contact-item"><i class="fas fa-globe"></i> <a href="https://ohyesevents.com/" target="_blank">ohyesevents.com</a></div>
                     <div class="contact-item"><i class="fas fa-user-tie"></i> <span>Founder: Saravanan</span></div>
                 </div>
             </div>
-            <div class="header-decoration">
-                <span class="deco-line"></span>
-                <span class="deco-line"></span>
-            </div>
         </div>
 
-        <form id="weddingPlannerForm">
+        <!-- ==================== PRE-FORM INTRO SECTION ==================== -->
+        <div class="intro-section" id="introSection">
+            <div class="intro-divider">━━━━━━━━━━━━━━━━━━━━━━</div>
+            <h2 class="intro-title">We design weddings and celebrations.</h2>
+            <p class="intro-promise">With care. With precision. With you.</p>
+            <div class="intro-divider">━━━━━━━━━━━━━━━━━━━━━━</div>
+            <button class="btn-start" id="startPlanningBtn">
+                Start your journey <i class= "fas fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <!-- ==================== FORM WRAPPER ==================== -->
+        <div class="form-wrapper" id="formWrapper" style="display: none;">
             <div class="form-progress">
-                <div class="progress-step active" data-step="1">1. Basic Info</div>
-                <div class="progress-step" data-step="2">2. Event Details</div>
-                <div class="progress-step" data-step="3">3. Venue & Food</div>
-                <div class="progress-step" data-step="4">4. Services</div>
-                <div class="progress-step" data-step="5">5. Submit</div>
+                <div class="progress-step active" data-step="1">What are you planning?</div>
+                <div class="progress-step" data-step="2">About you</div>
+                <div class="progress-step" data-step="3">When & where</div>
+                <div class="progress-step" data-step="4">How to execute</div>
+                <div class="progress-step" data-step="5">Review & confirm</div>
             </div>
 
-            <!-- STEP 1: Basic Info -->
-            <div class="form-step active" id="step1">
-                <div class="form-card">
-                    <div class="card-title"><i class="fas fa-user-circle"></i> Client Information</div>
-                    <label class="question-label">Full Name *</label>
-                    <input type="text" name="clientName" placeholder="Enter your full name" required>
-                    <label class="question-label">Contact Number *</label>
-                    <input type="tel" name="clientPhone" placeholder="Phone number" required>
-                    <label class="question-label">Email Address *</label>
-                    <input type="email" name="clientEmail" placeholder="you@example.com" required>
-                    <label class="question-label">Event Type *</label>
-                    <div class="multi-option-group" id="eventTypeGroup">
-                        <label class="radio-label"><input type="radio" name="eventType" value="Wedding" class="eventTypeRadio"> Wedding</label>
-                        <label class="radio-label"><input type="radio" name="eventType" value="Reception Only" class="eventTypeRadio"> Reception Only</label>
-                        <label class="radio-label"><input type="radio" name="eventType" value="Decor Only" class="eventTypeRadio"> Decor Only</label>
-                        <label class="radio-label"><input type="radio" name="eventType" value="Corporate Event" class="eventTypeRadio"> Corporate Event</label>
-                        <label class="radio-label"><input type="radio" name="eventType" value="Other" class="eventTypeRadio" id="otherEventRadio"> Other</label>
-                    </div>
-                    <div id="otherEventInput" style="display: none; margin-top: 10px;">
-                        <input type="text" id="otherEventText" placeholder="Please specify event type">
-                    </div>
-                </div>
+            <!-- Transition Message Container -->
+            <div class="transition-message" id="transitionMessage"></div>
 
-                <div class="form-card">
-                    <div class="card-title"><i class="fas fa-chart-line"></i> Planning Scope</div>
-                    <label class="question-label">Planning Type *</label>
-                    <div class="multi-option-group">
-                        <label class="radio-label"><input type="radio" name="planningType" value="End-to-End"> End-to-End (Full Planning)</label>
-                        <label class="radio-label"><input type="radio" name="planningType" value="Decor Only"> Decor Only</label>
-                        <label class="radio-label"><input type="radio" name="planningType" value="Suggestions"> Suggestions / Consultation</label>
-                        <label class="radio-label"><input type="radio" name="planningType" value="Other" id="planningOtherRadio"> Other</label>
-                    </div>
-                    <div id="otherPlanningInput" style="display: none; margin-top: 10px;">
-                        <input type="text" id="otherPlanningText" placeholder="Please specify planning type">
-                    </div>
-                </div>
-
-                <!-- Estimated Budget - Separate Section (No Rupee Symbol) -->
-                <div class="form-card">
-                    <div class="card-title"><i class="fas fa-wallet"></i> Estimated Budget</div>
-                    <label class="question-label">What is your estimated budget for this event? *</label>
-                    <input type="text" name="estimatedBudget" placeholder="e.g., 25 Lakhs or 30000 USD" required>
-                    <p class="priority-sub" style="margin-top: 5px;">Don't worry — we respect every budget and will customize options accordingly.</p>
-                </div>
-            </div>
-
-            <!-- STEP 2: Event Details -->
-            <div class="form-step" id="step2">
-                <div id="weddingSection" style="display: none;">
+            <form id="weddingPlannerForm">
+                <!-- STEP 1: Event Selection -->
+                <div class="form-step active" id="step1">
                     <div class="form-card">
-                        <div class="card-title"><i class="fas fa-ring"></i> Wedding Ceremonies & Functions</div>
-                        <div class="multi-option-group">
-                            <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Mehendi"> Mehendi</label>
-                            <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Haldi"> Haldi</label>
-                            <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Sangeet"> Sangeet</label>
-                            <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Roka"> Roka</label>
-                            <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Baraat"> Baraat</label>
-                            <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Ganesh Pooja"> Ganesh Pooja</label>
-                            <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Wedding Ceremony"> Wedding Ceremony</label>
-                            <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Reception"> Reception</label>
-                            <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Engagement"> Engagement</label>
-                            <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Pool Party"> Pool Party</label>
-                            <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Bachelor Party"> Bachelor Party</label>
-                            <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Other" id="otherCeremonyCheckbox"> Other</label>
+                        <div class="card-title"><i class="fas fa-calendar-alt"></i> What are you planning?</div>
+                        <p class="card-description">Choose the experience that fits your vision.</p>
+                        
+                        <div class="event-type-grid">
+                            <label class="event-card">
+                                <input type="radio" name="eventType" value="Wedding" class="eventTypeRadio">
+                                <i class="fas fa-ring"></i>
+                                <h3>Wedding</h3>
+                                <p>A celebration that reflects you</p>
+                                <span class="soft-nudge">most popular</span>
+                            </label>
+                            <label class="event-card">
+                                <input type="radio" name="eventType" value="Reception Only" class="eventTypeRadio">
+                                <i class="fas fa-glass-cheers"></i>
+                                <h3>Reception</h3>
+                                <p>An evening to remember</p>
+                            </label>
+                            <label class="event-card">
+                                <input type="radio" name="eventType" value="Corporate Event" class="eventTypeRadio">
+                                <i class="fas fa-building"></i>
+                                <h3>Corporate</h3>
+                                <p>Where business meets purpose</p>
+                            </label>
+                            <label class="event-card">
+                                <input type="radio" name="eventType" value="Decor Only" class="eventTypeRadio">
+                                <i class="fas fa-palette"></i>
+                                <h3>Decor</h3>
+                                <p>Our award-winning touch, your vision</p>
+                            </label>
+                            <label class="event-card">
+                                <input type="radio" name="eventType" value="Other" class="eventTypeRadio">
+                                <i class="fas fa-star"></i>
+                                <h3>Others</h3>
+                                <p>A completely custom journey</p>
+                                <span class="soft-nudge">tell us your dream</span>
+                            </label>
                         </div>
-                        <div id="otherCeremonyInput" style="display: none; margin-top: 10px;">
-                            <input type="text" id="otherCeremonyText" placeholder="Please specify ceremony">
+                        <div id="otherEventInput" style="display: none; margin-top: 15px;">
+                            <input type="text" id="otherEventText" placeholder="Tell us about your vision">
                         </div>
                     </div>
+                </div>
+
+                <!-- STEP 2: About You -->
+                <div class="form-step" id="step2">
                     <div class="form-card">
-                        <div class="card-title"><i class="fas fa-globe-asia"></i> Wedding Style & Vibe</div>
-                        <label class="question-label">Cultural Style *</label>
-                        <div class="multi-option-group">
-                            <label class="radio-label"><input type="radio" name="culturalStyle" value="South Indian"> South Indian</label>
-                            <label class="radio-label"><input type="radio" name="culturalStyle" value="North Indian"> North Indian</label>
-                            <label class="radio-label"><input type="radio" name="culturalStyle" value="Fusion"> Fusion</label>
-                            <label class="radio-label"><input type="radio" name="culturalStyle" value="Other" id="culturalStyleOtherRadio"> Other</label>
-                        </div>
-                        <div id="culturalStyleOtherInput" style="display: none; margin-top: 10px;">
-                            <input type="text" id="culturalStyleOtherText" placeholder="Please specify cultural style">
-                        </div>
-                        <label class="question-label" style="margin-top: 1rem;">Wedding Vibe *</label>
-                        <div class="multi-option-group">
-                            <label class="checkbox-label"><input type="checkbox" name="weddingVibe" value="Traditional"> Traditional</label>
-                            <label class="checkbox-label"><input type="checkbox" name="weddingVibe" value="Modern"> Modern</label>
-                            <label class="checkbox-label"><input type="checkbox" name="weddingVibe" value="Royal/Luxury"> Royal/Luxury</label>
-                            <label class="checkbox-label"><input type="checkbox" name="weddingVibe" value="Destination"> Destination</label>
-                            <label class="checkbox-label"><input type="checkbox" name="weddingVibe" value="Theme-Based"> Theme-Based</label>
-                            <label class="checkbox-label"><input type="checkbox" name="weddingVibe" value="Other" id="weddingVibeOther"> Other</label>
-                        </div>
-                        <div id="weddingVibeOtherInput" style="display: none; margin-top: 10px;">
-                            <input type="text" id="weddingVibeOtherText" placeholder="Please specify wedding vibe">
-                        </div>
+                        <div class="card-title"><i class="fas fa-user-circle"></i> About you</div>
+                        <p class="card-description">So we can reach out with your personalized plan.</p>
+                        
+                        <label class="question-label">Your name</label>
+                        <input type="text" name="clientName" placeholder="e.g., John & Jane Doe" required>
+                        
+                        <label class="question-label">Phone number</label>
+                        <input type="tel" name="clientPhone" placeholder="Your best contact number" required>
+                        
+                        <label class="question-label">Email address</label>
+                        <input type="email" name="clientEmail" placeholder="Where should we send your summary?" required>
                     </div>
-                </div>
 
-                <!-- Other Event Type Section -->
-                <div id="otherEventDetailsSection" style="display: none;">
                     <div class="form-card">
-                        <div class="card-title"><i class="fas fa-info-circle"></i> Tell Us About Your Event</div>
-                        <label class="question-label">Please describe your event type and requirements</label>
-                        <textarea name="otherEventDetails" rows="4" placeholder="Tell us about your event - what kind of celebration, what are your expectations, any special requirements..."></textarea>
-                        <p class="priority-sub" style="margin-top: 8px;">Our team will reach out to understand your vision and provide a custom solution.</p>
-                    </div>
-                </div>
-
-                <div id="receptionSection" style="display: none;">
-                    <div class="form-card">
-                        <div class="card-title"><i class="fas fa-glass-cheers"></i> Select What You Want in Your Reception</div>
+                        <div class="card-title"><i class="fas fa-chart-line"></i> How involved would you like us to be?</div>
                         <div class="multi-option-group">
-                            <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Grand Entry"> Grand Entry</label>
-                            <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Stage & Decor"> Stage & Decor</label>
-                            <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Guest Meet & Greet"> Guest Meet & Greet</label>
-                            <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Entertainment (DJ / Live)"> Entertainment (DJ / Live)</label>
-                            <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Dinner / Catering"> Dinner / Catering</label>
-                            <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Photography"> Photography</label>
-                            <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Cake Cutting / Special Moments"> Cake Cutting / Special Moments</label>
-                            <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Return Gifts"> Return Gifts</label>
-                            <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Other" id="receptionOtherCheckbox"> Other</label>
+                            <label class="radio-label"><input type="radio" name="planningType" value="End-to-End"> End-to-end — full planning</label>
+                            <label class="radio-label"><input type="radio" name="planningType" value="Decor Only"> Decor only</label>
+                            <label class="radio-label"><input type="radio" name="planningType" value="Suggestions"> Suggestions & guidance</label>
+                            <label class="radio-label"><input type="radio" name="planningType" value="Other" id="planningOtherRadio"> Other — tell us more</label>
                         </div>
-                        <div id="receptionOtherInput" style="display: none; margin-top: 10px;">
-                            <input type="text" id="receptionOtherText" placeholder="Please specify">
+                        <div id="otherPlanningInput" style="display: none; margin-top: 10px;">
+                            <input type="text" id="otherPlanningText" placeholder="Tell us what you have in mind">
                         </div>
                     </div>
-                </div>
 
-                <div id="corporateSection" style="display: none;">
                     <div class="form-card">
-                        <div class="card-title"><i class="fas fa-building"></i> Corporate Event Functions</div>
-                        <div class="multi-option-group">
-                            <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Opening Ceremony"> Opening Ceremony</label>
-                            <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Conference / Sessions"> Conference / Sessions</label>
-                            <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Award Ceremony"> Award Ceremony</label>
-                            <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Networking"> Networking</label>
-                            <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Lunch / Dinner"> Lunch / Dinner</label>
-                            <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Entertainment"> Entertainment</label>
-                            <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Product Launch"> Product Launch</label>
-                            <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Closing Ceremony"> Closing Ceremony</label>
-                            <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Other" id="otherCorporateCheckbox"> Other</label>
+                        <div class="card-title"><i class="fas fa-wallet"></i> What budget feels comfortable?</div>
+                        <p class="card-description">We work with every range. Just share what's right for you.</p>
+                        <input type="text" name="estimatedBudget" placeholder="e.g., 25 Lakhs or 30000 USD" required>
+                    </div>
+                </div>
+
+                <!-- STEP 3: When & Where -->
+                <div class="form-step" id="step3">
+                    <!-- Wedding Specific Section -->
+                    <div id="weddingSection" style="display: none;">
+                        <div class="form-card">
+                            <div class="card-title"><i class="fas fa-ring"></i> Wedding Ceremonies</div>
+                            <div class="multi-option-group">
+                                <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Mehendi"> Mehendi</label>
+                                <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Haldi"> Haldi</label>
+                                <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Sangeet"> Sangeet</label>
+                                <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Roka"> Roka</label>
+                                <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Baraat"> Baraat</label>
+                                <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Ganesh Pooja"> Ganesh Pooja</label>
+                                <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Wedding Ceremony"> Wedding Ceremony</label>
+                                <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Reception"> Reception</label>
+                                <label class="checkbox-label"><input type="checkbox" name="ceremonies" value="Other" id="otherCeremonyCheckbox"> Other</label>
+                            </div>
+                            <div id="otherCeremonyInput" style="display: none; margin-top: 10px;">
+                                <input type="text" id="otherCeremonyText" placeholder="Tell us which ceremonies">
+                            </div>
                         </div>
-                        <div id="otherCorporateInput" style="display: none; margin-top: 10px;">
-                            <input type="text" id="otherCorporateText" placeholder="Please specify function">
-                        </div>
-                    </div>
-                </div>
 
-                <div id="simpleEventSection" style="display: none;">
-                    <div class="form-card">
-                        <div class="card-title"><i class="fas fa-calendar"></i> Event Details</div>
-                        <p class="priority-sub">Please proceed with the details below. Our team will assist you.</p>
-                    </div>
-                </div>
-
-                <div class="form-card">
-                    <div class="card-title"><i class="fas fa-calendar-alt"></i> Date & Scale</div>
-                    <label class="question-label">Number of Days *</label>
-                    <select name="celebrationDays" required>
-                        <option value="">Select days</option>
-                        <option value="1 Day">1 Day</option>
-                        <option value="2 Days">2 Days</option>
-                        <option value="3 Days">3 Days</option>
-                        <option value="4 Days">4 Days</option>
-                        <option value="5+ Days">5+ Days</option>
-                    </select>
-                    <label class="question-label">Date Range *</label>
-                    <input type="text" name="dateRange" id="dateRangePicker" placeholder="Select date range" required>
-                    <label class="question-label">Expected Guest Count *</label>
-                    <input type="number" name="guestCount" placeholder="Approximate number" required>
-                </div>
-
-                <div class="form-card">
-                    <div class="card-title"><i class="fas fa-music"></i> Entertainment</div>
-                    <label class="question-label">Do you want entertainment arrangements? *</label>
-                    <div class="multi-option-group">
-                        <label class="radio-label"><input type="radio" name="needEntertainment" value="yes" class="entertainmentRadio"> Yes</label>
-                        <label class="radio-label"><input type="radio" name="needEntertainment" value="no" class="entertainmentRadio" checked> No</label>
-                    </div>
-                    <div id="entertainmentSuggestions" style="display: none; margin-top: 15px;">
-                        <label class="question-label">Select entertainment options:</label>
-                        <div class="multi-option-group">
-                            <label class="checkbox-label"><input type="checkbox" name="entertainmentOptions" value="Live DJ"> Live DJ</label>
-                            <label class="checkbox-label"><input type="checkbox" name="entertainmentOptions" value="Live Band"> Live Band</label>
-                            <label class="checkbox-label"><input type="checkbox" name="entertainmentOptions" value="Dance Performers"> Dance Performers</label>
-                            <label class="checkbox-label"><input type="checkbox" name="entertainmentOptions" value="Emcee"> Emcee</label>
-                            <label class="checkbox-label"><input type="checkbox" name="entertainmentOptions" value="Fireworks"> Fireworks</label>
+                        <div class="form-card">
+                            <div class="card-title"><i class="fas fa-globe-asia"></i> Wedding Style</div>
+                            <label class="question-label">Cultural Style</label>
+                            <div class="multi-option-group">
+                                <label class="radio-label"><input type="radio" name="culturalStyle" value="South Indian"> South Indian</label>
+                                <label class="radio-label"><input type="radio" name="culturalStyle" value="North Indian"> North Indian</label>
+                                <label class="radio-label"><input type="radio" name="culturalStyle" value="Fusion"> Fusion</label>
+                                <label class="radio-label"><input type="radio" name="culturalStyle" value="Other" id="culturalStyleOtherRadio"> Other</label>
+                            </div>
+                            <div id="culturalStyleOtherInput" style="display: none; margin-top: 10px;">
+                                <input type="text" id="culturalStyleOtherText" placeholder="Tell us your preference">
+                            </div>
+                            <label class="question-label" style="margin-top: 1rem;">Wedding Vibe</label>
+                            <div class="multi-option-group">
+                                <label class="checkbox-label"><input type="checkbox" name="weddingVibe" value="Traditional"> Traditional</label>
+                                <label class="checkbox-label"><input type="checkbox" name="weddingVibe" value="Modern"> Modern</label>
+                                <label class="checkbox-label"><input type="checkbox" name="weddingVibe" value="Royal/Luxury"> Royal/Luxury</label>
+                                <label class="checkbox-label"><input type="checkbox" name="weddingVibe" value="Destination"> Destination</label>
+                                <label class="checkbox-label"><input type="checkbox" name="weddingVibe" value="Theme-Based"> Theme-Based</label>
+                                <label class="checkbox-label"><input type="checkbox" name="weddingVibe" value="Other" id="weddingVibeOther"> Other</label>
+                            </div>
+                            <div id="weddingVibeOtherInput" style="display: none; margin-top: 10px;">
+                                <input type="text" id="weddingVibeOtherText" placeholder="Tell us your vibe">
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- STEP 3: Location, Venue, Food -->
-            <div class="form-step" id="step3">
-                <div class="form-card">
-                    <div class="card-title"><i class="fas fa-map-marker-alt"></i> Location & Venue</div>
-                    <label class="question-label">State / Region *</label>
-                    <select name="state" id="stateSelect" required>
-                        <option value="">Select State / Region</option>
-                        <option value="Tamil Nadu">Tamil Nadu</option>
-                        <option value="Bangalore">Bangalore</option>
-                        <option value="Hyderabad">Hyderabad</option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Kerala">Kerala</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="UAE">UAE</option>
-                        <option value="Other" id="stateOtherOption">Other</option>
-                    </select>
-                    <div id="stateOtherInput" style="display: none; margin-top: 10px;">
-                        <input type="text" id="stateOtherText" placeholder="Please specify your state/region">
-                    </div>
-                    <label class="question-label">District / City *</label>
-                    <select name="city" id="citySelect" required><option value="">Select District / City</option></select>
-                    <div id="cityOtherInput" style="display: none; margin-top: 10px;">
-                        <input type="text" id="cityOtherText" placeholder="Please specify your district/city">
-                    </div>
-                    <label class="question-label">Venue Preference *</label>
-                    <div class="multi-option-group" id="venuePreferenceGroup">
-                        <label class="checkbox-label"><input type="checkbox" name="venueCategory" value="Banquet Hall"> Banquet Hall</label>
-                        <label class="checkbox-label"><input type="checkbox" name="venueCategory" value="Lawn Space"> Lawn Space</label>
-                        <label class="checkbox-label"><input type="checkbox" name="venueCategory" value="Beach Space"> Beach Space</label>
-                        <label class="checkbox-label"><input type="checkbox" name="venueCategory" value="Resort"> Resort</label>
-                        <label class="checkbox-label"><input type="checkbox" name="venueCategory" value="5-Star Hotel"> 5-Star Hotel</label>
-                        <label class="checkbox-label"><input type="checkbox" name="venueCategory" value="Other" id="venueOtherCheckbox"> Other</label>
-                    </div>
-                    <div id="venueOtherInput" style="display: none; margin-top: 10px;">
-                        <input type="text" id="venueOtherText" placeholder="Please specify your venue preference">
-                    </div>
-                </div>
-
-                <div class="form-card">
-                    <div class="card-title"><i class="fas fa-utensils"></i> Food & Accommodation</div>
-                    <label class="question-label">Food Preference *</label>
-                    <div class="multi-option-group">
-                        <label class="checkbox-label"><input type="checkbox" name="foodType" value="Veg"> Veg Only</label>
-                        <label class="checkbox-label"><input type="checkbox" name="foodType" value="Non-Veg"> Non-Veg</label>
-                        <label class="checkbox-label"><input type="checkbox" name="foodType" value="Mixed"> Mixed</label>
-                    </div>
-                    <input type="text" name="foodExperience" placeholder="Any specific cuisine" style="margin-top: 10px;">
-                    <label class="question-label" style="margin-top: 1rem;">Guest Accommodation</label>
-                    <div class="multi-option-group">
-                        <label class="radio-label"><input type="radio" name="needRooms" value="yes" class="needRoomsRadio"> Yes</label>
-                        <label class="radio-label"><input type="radio" name="needRooms" value="no" class="needRoomsRadio" checked> No</label>
-                    </div>
-                    <div id="roomsInput" style="display: none; margin-top: 10px;">
-                        <input type="number" name="roomsRequired" placeholder="How many rooms?">
-                    </div>
-                </div>
-
-                <div class="form-card">
-                    <div class="card-title"><i class="fas fa-palette"></i> Decor Vision</div>
-                    <textarea name="decorInspiration" rows="2" placeholder="Describe your dream decor, theme colors..."></textarea>
-                    <input type="url" name="inspirationLink" placeholder="Inspiration link (Pinterest/Instagram)" style="margin-top: 10px;">
-                    <input type="file" name="decorImages" id="decorImages" accept="image/*" multiple style="margin-top: 10px;">
-                    <div id="fileList" class="hint"></div>
-                </div>
-            </div>
-
-            <!-- STEP 4: Services -->
-            <div class="form-step" id="step4">
-                <div class="form-card">
-                    <div class="card-title"><i class="fas fa-concierge-bell"></i> Services We Can Arrange For You</div>
-                    <p class="priority-sub">Select what you need — we'll handle everything with excellence!</p>
-                    
-                    <div class="service-categories" id="serviceCategories">
-                        <button type="button" class="cat-btn active" data-cat="all">All</button>
-                        <button type="button" class="cat-btn" data-cat="stationery">Stationery</button>
-                        <button type="button" class="cat-btn" data-cat="stays">Guest Stays</button>
-                        <button type="button" class="cat-btn" data-cat="transport">Transport</button>
-                        <button type="button" class="cat-btn" data-cat="gifts">Gifts</button>
-                        <button type="button" class="cat-btn" data-cat="entertainment">Entertainment</button>
-                        <button type="button" class="cat-btn" data-cat="services">Services</button>
-                        <button type="button" class="cat-btn" data-cat="addons">Add-ons</button>
-                    </div>
-
-                    <div class="services-container" id="servicesContainer"></div>
-                </div>
-
-                <div class="form-card">
-                    <div class="card-title"><i class="fas fa-handshake"></i> Vendor Status</div>
-                    <label class="question-label">Have you finalized any vendors?</label>
-                    <div class="multi-option-group">
-                        <label class="radio-label"><input type="radio" name="vendorFinalized" value="yes" class="vendorRadio"> Yes</label>
-                        <label class="radio-label"><input type="radio" name="vendorFinalized" value="no" class="vendorRadio" checked> No</label>
-                    </div>
-                    <div id="vendorOptions" style="display: none; margin-top: 10px;">
-                        <div class="multi-option-group">
-                            <label class="checkbox-label"><input type="checkbox" name="finalizedVendors" value="Venue"> Venue</label>
-                            <label class="checkbox-label"><input type="checkbox" name="finalizedVendors" value="Photography"> Photography</label>
-                            <label class="checkbox-label"><input type="checkbox" name="finalizedVendors" value="Makeup"> Makeup</label>
-                            <label class="checkbox-label"><input type="checkbox" name="finalizedVendors" value="Decor"> Decor</label>
-                            <label class="checkbox-label"><input type="checkbox" name="finalizedVendors" value="Catering"> Catering</label>
+                    <!-- Reception Section -->
+                    <div id="receptionSection" style="display: none;">
+                        <div class="form-card">
+                            <div class="card-title"><i class="fas fa-glass-cheers"></i> Reception Preferences</div>
+                            <div class="multi-option-group">
+                                <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Grand Entry"> Grand Entry</label>
+                                <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Stage & Decor"> Stage & Decor</label>
+                                <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Entertainment"> Entertainment</label>
+                                <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Dinner/Catering"> Dinner/Catering</label>
+                                <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Photography"> Photography</label>
+                                <label class="checkbox-label"><input type="checkbox" name="receptionItems" value="Other" id="receptionOtherCheckbox"> Other</label>
+                            </div>
+                            <div id="receptionOtherInput" style="display: none; margin-top: 10px;">
+                                <input type="text" id="receptionOtherText" placeholder="Tell us what you have in mind">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-card">
-                    <div class="card-title"><i class="fas fa-users"></i> Decision Making</div>
-                    <label class="question-label">Who is the final decision maker? *</label>
-                    <input type="text" name="decisionMaker" required>
-                    <label class="question-label">By when will you finalize your planner? *</label>
-                    <input type="text" name="finaliseDeadline" required>
-                    <label class="question-label">Are you exploring other planners?</label>
-                    <div class="multi-option-group">
-                        <label class="radio-label"><input type="radio" name="otherPlanners" value="Yes"> Yes</label>
-                        <label class="radio-label"><input type="radio" name="otherPlanners" value="No" checked> No</label>
+                    <!-- Corporate Section -->
+                    <div id="corporateSection" style="display: none;">
+                        <div class="form-card">
+                            <div class="card-title"><i class="fas fa-building"></i> Corporate Event Functions</div>
+                            <div class="multi-option-group">
+                                <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Conference"> Conference</label>
+                                <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Award Ceremony"> Award Ceremony</label>
+                                <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Gala Dinner"> Gala Dinner</label>
+                                <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Product Launch"> Product Launch</label>
+                                <label class="checkbox-label"><input type="checkbox" name="corporateFunctions" value="Other" id="otherCorporateCheckbox"> Other</label>
+                            </div>
+                            <div id="otherCorporateInput" style="display: none; margin-top: 10px;">
+                                <input type="text" id="otherCorporateText" placeholder="Tell us about your event">
+                            </div>
+                        </div>
                     </div>
-                    <label class="question-label" style="margin-top: 1rem;">Interested in sustainable wedding?</label>
-                    <div class="multi-option-group">
-                        <label class="radio-label"><input type="radio" name="sustainableWedding" value="Yes"> Yes</label>
-                        <label class="radio-label"><input type="radio" name="sustainableWedding" value="No" checked> No</label>
-                    </div>
-                </div>
-            </div>
 
-            <!-- STEP 5: Submit with What Matters Most -->
-            <div class="form-step" id="step5">
-                <!-- Wedding Priorities Section -->
-                <div id="weddingPrioritiesSection" class="priority-main-section" style="display: none;">
-                    <div class="form-card">
-                        <div class="card-title"><i class="fas fa-star"></i> What Matters Most to You? <span class="priority-badge">Pick Your Top Priorities</span></div>
-                        <p class="priority-sub">Select the things that are most important to you — we'll make sure these get extra love and attention!</p>
+                    <!-- The Oh Yes Signature Section - Refined Version -->
+                    <div class="form-card signature-card">
+                        <div class="signature-header">
+                            <span class="signature-subtle">The Oh Yes Signature</span>
+                            <h3 class="signature-title">What matters most to you?</h3>
+                            <p class="card-description">Choose what matters <span class="light-text">purely optional</span></p>
+                        </div>
                         <div class="priority-grid">
-                            <label class="priority-label"><input type="checkbox" name="priorities" value="Decor & Flowers — Make everything beautiful"> Decor & Flowers — Make everything beautiful</label>
-                            <label class="priority-label"><input type="checkbox" name="priorities" value="Food & Catering — Delicious meals for everyone"> Food & Catering — Delicious meals for everyone</label>
-                            <label class="priority-label"><input type="checkbox" name="priorities" value="Photography & Videos — Capture every moment"> Photography & Videos — Capture every moment</label>
-                            <label class="priority-label"><input type="checkbox" name="priorities" value="Music & Entertainment — Keep the energy high"> Music & Entertainment — Keep the energy high</label>
-                            <label class="priority-label"><input type="checkbox" name="priorities" value="Venue & Logistics — Smooth arrangements"> Venue & Logistics — Smooth arrangements</label>
-                            <label class="priority-label"><input type="checkbox" name="priorities" value="Guest Gifts & Experience — Make guests feel special"> Guest Gifts & Experience — Make guests feel special</label>
-                            <label class="priority-label"><input type="checkbox" name="priorities" value="Outfits & Makeup — Looking your best"> Outfits & Makeup — Looking your best</label>
-                            <label class="priority-label"><input type="checkbox" name="priorities" value="Invitations & Stationery — Beautiful details"> Invitations & Stationery — Beautiful details</label>
-                            <label class="priority-label"><input type="checkbox" name="priorities" value="Other" id="otherPriorityCheckbox"> Other — Share your thoughts</label>
-                        </div>
-                        <div id="otherPriorityInput" style="display: none; margin-top: 10px;">
-                            <input type="text" id="otherPriorityText" placeholder="Please share what matters most to you">
+                            <div class="priority-card">
+                                <input type="checkbox" name="signaturePriorities" value="Guest Experience" id="priority1">
+                                <label for="priority1">
+                                    <span class="priority-title">Guest Experience</span>
+                                    <span class="priority-desc">Every guest feels welcomed</span>
+                                </label>
+                            </div>
+                            <div class="priority-card">
+                                <input type="checkbox" name="signaturePriorities" value="Event Coordination" id="priority2">
+                                <label for="priority2">
+                                    <span class="priority-title">Event Coordination</span>
+                                    <span class="priority-desc">Flawless execution</span>
+                                </label>
+                            </div>
+                            <div class="priority-card">
+                                <input type="checkbox" name="signaturePriorities" value="Event Design" id="priority3">
+                                <label for="priority3">
+                                    <span class="priority-title">Event Design</span>
+                                    <span class="priority-desc">Design that tells your story</span>
+                                </label>
+                            </div>
+                            <div class="priority-card">
+                                <input type="checkbox" name="signaturePriorities" value="Entertainment" id="priority4">
+                                <label for="priority4">
+                                    <span class="priority-title">Entertainment</span>
+                                    <span class="priority-desc">Memorable moments</span>
+                                </label>
+                            </div>
+                            <div class="priority-card">
+                                <input type="checkbox" name="signaturePriorities" value="Personalized Planning" id="priority5">
+                                <label for="priority5">
+                                    <span class="priority-title">Personalized Planning</span>
+                                    <span class="priority-desc">Tailored to your vision</span>
+                                </label>
+                            </div>
+                            <div class="priority-card">
+                                <input type="checkbox" name="signaturePriorities" value="Luxury Details" id="priority6">
+                                <label for="priority6">
+                                    <span class="priority-title">Luxury Details</span>
+                                    <span class="priority-desc">Premium in every detail</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Reception Priorities Section -->
-                <div id="receptionPrioritiesSection" class="priority-main-section" style="display: none;">
+                    <!-- Location & Date -->
                     <div class="form-card">
-                        <div class="card-title"><i class="fas fa-star"></i> What Matters Most for Your Reception?</div>
-                        <p class="priority-sub">Let us know what's most important for your special evening!</p>
-                        <div class="priority-grid">
-                            <label class="priority-label"><input type="checkbox" name="receptionPriorities" value="Grand Entry & Atmosphere"> Grand Entry & Atmosphere</label>
-                            <label class="priority-label"><input type="checkbox" name="receptionPriorities" value="Food & Dining Experience"> Food & Dining Experience</label>
-                            <label class="priority-label"><input type="checkbox" name="receptionPriorities" value="Photography & Memories"> Photography & Memories</label>
-                            <label class="priority-label"><input type="checkbox" name="receptionPriorities" value="Entertainment & Music"> Entertainment & Music</label>
-                            <label class="priority-label"><input type="checkbox" name="receptionPriorities" value="Guest Comfort & Experience"> Guest Comfort & Experience</label>
-                            <label class="priority-label"><input type="checkbox" name="receptionPriorities" value="Decor & Ambiance"> Decor & Ambiance</label>
-                            <label class="priority-label"><input type="checkbox" name="receptionPriorities" value="Other" id="otherReceptionPriorityCheckbox"> Other</label>
-                        </div>
-                        <div id="otherReceptionPriorityInput" style="display: none; margin-top: 10px;">
-                            <input type="text" id="otherReceptionPriorityText" placeholder="Please share what matters most">
-                        </div>
+                        <div class="card-title"><i class="fas fa-calendar-alt"></i> When is your event?</div>
+                        <label class="question-label">Number of days</label>
+                        <select name="celebrationDays" required>
+                            <option value="">Select</option>
+                            <option value="1 Day">1 Day</option>
+                            <option value="2 Days">2 Days</option>
+                            <option value="3 Days">3 Days</option>
+                            <option value="4 Days">4 Days</option>
+                            <option value="5+ Days">5+ Days</option>
+                        </select>
+                        <label class="question-label">Date range</label>
+                        <input type="text" name="dateRange" id="dateRangePicker" placeholder="Select your dates" required>
+                        <label class="question-label">Expected guests</label>
+                        <input type="number" name="guestCount" placeholder="Approximate number" required>
                     </div>
-                </div>
 
-                <!-- Corporate Priorities Section -->
-                <div id="corporatePrioritiesSection" class="priority-main-section" style="display: none;">
                     <div class="form-card">
-                        <div class="card-title"><i class="fas fa-star"></i> What Matters Most for Your Corporate Event?</div>
-                        <p class="priority-sub">Help us understand your key priorities!</p>
-                        <div class="priority-grid">
-                            <label class="priority-label"><input type="checkbox" name="corporatePriorities" value="Seamless Execution"> Seamless Execution</label>
-                            <label class="priority-label"><input type="checkbox" name="corporatePriorities" value="Brand Experience"> Brand Experience</label>
-                            <label class="priority-label"><input type="checkbox" name="corporatePriorities" value="Attendee Engagement"> Attendee Engagement</label>
-                            <label class="priority-label"><input type="checkbox" name="corporatePriorities" value="Premium Catering"> Premium Catering</label>
-                            <label class="priority-label"><input type="checkbox" name="corporatePriorities" value="Audio Visual & Tech"> Audio Visual & Tech</label>
-                            <label class="priority-label"><input type="checkbox" name="corporatePriorities" value="Networking Opportunities"> Networking Opportunities</label>
-                            <label class="priority-label"><input type="checkbox" name="corporatePriorities" value="Other" id="otherCorporatePriorityCheckbox"> Other</label>
+                        <div class="card-title"><i class="fas fa-map-marker-alt"></i> Where will it take place?</div>
+                        <label class="question-label">State / Region</label>
+                        <select name="state" id="stateSelect" required>
+                            <option value="">Select</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="UAE">UAE</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div id="stateOtherInput" style="display: none; margin-top: 10px;">
+                            <input type="text" id="stateOtherText" placeholder="Tell us where">
                         </div>
-                        <div id="otherCorporatePriorityInput" style="display: none; margin-top: 10px;">
-                            <input type="text" id="otherCorporatePriorityText" placeholder="Please share what matters most">
+                        
+                        <label class="question-label">City / District</label>
+                        <select name="city" id="citySelect" required><option value="">Select</option></select>
+                        <div id="cityOtherInput" style="display: none; margin-top: 10px;">
+                            <input type="text" id="cityOtherText" placeholder="Tell us the city">
                         </div>
                     </div>
                 </div>
 
-                <!-- Other Event Priorities Section -->
-                <div id="otherPrioritiesSection" class="priority-main-section" style="display: none;">
+                <!-- STEP 4: How to Execute -->
+                <div class="form-step" id="step4">
                     <div class="form-card">
-                        <div class="card-title"><i class="fas fa-star"></i> Tell Us What Matters Most</div>
-                        <p class="priority-sub">Please share what's most important for your special event!</p>
-                        <textarea id="otherPrioritiesText" name="otherPrioritiesText" rows="3" placeholder="What matters most to you? What are your key expectations?"></textarea>
+                        <div class="card-title"><i class="fas fa-building"></i> Venue preference</div>
+                        <div class="multi-option-group">
+                            <label class="checkbox-label"><input type="checkbox" name="venueCategory" value="Banquet Hall"> Banquet Hall</label>
+                            <label class="checkbox-label"><input type="checkbox" name="venueCategory" value="Lawn Space"> Lawn Space</label>
+                            <label class="checkbox-label"><input type="checkbox" name="venueCategory" value="Beach Space"> Beach Space</label>
+                            <label class="checkbox-label"><input type="checkbox" name="venueCategory" value="Resort"> Resort</label>
+                            <label class="checkbox-label"><input type="checkbox" name="venueCategory" value="5-Star Hotel"> 5-Star Hotel</label>
+                            <label class="checkbox-label"><input type="checkbox" name="venueCategory" value="Other" id="venueOtherCheckbox"> Other</label>
+                        </div>
+                        <div id="venueOtherInput" style="display: none; margin-top: 10px;">
+                            <input type="text" id="venueOtherText" placeholder="Tell us your preference">
+                        </div>
+                    </div>
+
+                    <div class="form-card">
+                        <div class="card-title"><i class="fas fa-utensils"></i> Food & Accommodation</div>
+                        <label class="question-label">Food preference</label>
+                        <div class="multi-option-group">
+                            <label class="checkbox-label"><input type="checkbox" name="foodType" value="Veg"> Veg</label>
+                            <label class="checkbox-label"><input type="checkbox" name="foodType" value="Non-Veg"> Non-Veg</label>
+                            <label class="checkbox-label"><input type="checkbox" name="foodType" value="Mixed"> Mixed</label>
+                        </div>
+                        <label class="question-label" style="margin-top: 0.8rem;">Any specific cuisine or preferences?</label>
+                        <input type="text" name="foodExperience" placeholder="e.g., South Indian, Continental, Jain food...">
+                        
+                        <label class="question-label" style="margin-top: 1rem;">Rooms for guests?</label>
+                        <div class="multi-option-group">
+                            <label class="radio-label"><input type="radio" name="needRooms" value="yes" class="needRoomsRadio"> Yes, please</label>
+                            <label class="radio-label"><input type="radio" name="needRooms" value="no" class="needRoomsRadio" checked> No, not needed</label>
+                        </div>
+                        <div id="roomsInput" style="display: none; margin-top: 10px;">
+                            <input type="number" name="roomsRequired" placeholder="How many rooms?">
+                        </div>
+                    </div>
+
+                                        <div class="form-card">
+                        <div class="card-title"><i class="fas fa-music"></i> Entertainment</div>
+                        <div class="multi-option-group">
+                            <label class="radio-label"><input type="radio" name="needEntertainment" value="yes" class="entertainmentRadio"> Yes, I'm interested</label>
+                            <label class="radio-label"><input type="radio" name="needEntertainment" value="no" class="entertainmentRadio" checked> Not right now</label>
+                        </div>
+                        <div id="entertainmentOptionsDiv" style="display: none; margin-top: 10px;">
+                            <label class="question-label">Which entertainment options interest you?</label>
+                            <div class="multi-option-group">
+                                <label class="checkbox-label"><input type="checkbox" name="entertainmentOptions" value="Live DJ"> Live DJ</label>
+                                <label class="checkbox-label"><input type="checkbox" name="entertainmentOptions" value="Live Band"> Live Band</label>
+                                <label class="checkbox-label"><input type="checkbox" name="entertainmentOptions" value="Dance Performers"> Dance Performers</label>
+                                <label class="checkbox-label"><input type="checkbox" name="entertainmentOptions" value="Emcee"> Emcee</label>
+                                <label class="checkbox-label"><input type="checkbox" name="entertainmentOptions" value="Fireworks"> Fireworks</label>
+                                <label class="checkbox-label"><input type="checkbox" name="entertainmentOptions" value="Other" id="entertainmentOtherCheckbox"> Other </label>
+                            </div>
+                            <div id="entertainmentOtherInput" style="display: none; margin-top: 10px;">
+                                <input type="text" id="entertainmentOtherText" placeholder="Please describe your entertainment vision">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-card">
+                        <div class="card-title"><i class="fas fa-palette"></i> Décor Vision</div>
+                        <label class="question-label">Tell us about your dream decor</label>
+                        <textarea name="decorInspiration" rows="3" placeholder="Describe your vision - colors, themes, floral preferences, any special requests..."></textarea>
+                        <label class="question-label" style="margin-top: 0.8rem;">Reference links (Pinterest, Instagram, etc.)</label>
+                        <input type="url" name="inspirationLink" placeholder="https://pinterest.com/... or Instagram link">
+                        <small class="hint">You can paste multiple links separated by commas</small>
+                    </div>
+
+                    <div class="form-card">
+                        <div class="card-title"><i class="fas fa-handshake"></i> Have you booked any vendors?</div>
+                        <div class="multi-option-group">
+                            <label class="radio-label"><input type="radio" name="vendorFinalized" value="yes" class="vendorRadio"> Yes, some</label>
+                            <label class="radio-label"><input type="radio" name="vendorFinalized" value="no" class="vendorRadio" checked> No, starting fresh</label>
+                        </div>
+                        <div id="vendorOptions" style="display: none; margin-top: 10px;">
+                            <label class="question-label">Which ones?</label>
+                            <div class="multi-option-group">
+                                <label class="checkbox-label"><input type="checkbox" name="finalizedVendors" value="Venue"> Venue</label>
+                                <label class="checkbox-label"><input type="checkbox" name="finalizedVendors" value="Photography"> Photography</label>
+                                <label class="checkbox-label"><input type="checkbox" name="finalizedVendors" value="Makeup"> Makeup</label>
+                                <label class="checkbox-label"><input type="checkbox" name="finalizedVendors" value="Décor"> Décor</label>
+                                <label class="checkbox-label"><input type="checkbox" name="finalizedVendors" value="Catering"> Catering</label>
+                                <label class="checkbox-label"><input type="checkbox" name="finalizedVendors" value="Other" id="vendorOtherCheckbox"> Other</label>
+                            </div>
+                            <div id="vendorOtherInput" style="display: none; margin-top: 10px;">
+                                <input type="text" id="vendorOtherText" placeholder="Tell us which vendors">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- What Made You Reach Out -->
-                <div class="form-card">
-                    <div class="card-title"><i class="fas fa-heart"></i> What Made You Reach Out to Oh Yes Events?</div>
-                    <p class="priority-sub">Your answer helps us serve you better!</p>
-                    <div class="multi-option-group">
-                        <label class="checkbox-label"><input type="checkbox" name="reachOutReason" value="Social Media"> Social Media</label>
-                        <label class="checkbox-label"><input type="checkbox" name="reachOutReason" value="Google Search"> Google Search</label>
-                        <label class="checkbox-label"><input type="checkbox" name="reachOutReason" value="Friend Referral"> Friend Referral</label>
-                        <label class="checkbox-label"><input type="checkbox" name="reachOutReason" value="Previous Client"> Previous Client</label>
-                        <label class="checkbox-label"><input type="checkbox" name="reachOutReason" value="Wedding Exhibition"> Wedding Exhibition</label>
-                        <label class="checkbox-label"><input type="checkbox" name="reachOutReason" value="Online Ad"> Online Ad</label>
-                        <label class="checkbox-label"><input type="checkbox" name="reachOutReason" value="Other" id="reachOutOtherCheckbox"> Other</label>
+                <!-- STEP 5: Review & Submit -->
+                <div class="form-step" id="step5">
+                    <div class="form-card">
+                        <div class="card-title"><i class="fas fa-users"></i> Final details</div>
+                        <label class="question-label">Final decision maker</label>
+                        <input type="text" name="decisionMaker" placeholder="e.g., Bride, Groom, Parents" required>
+                        <label class="question-label">When would you like to finalize your planner?</label>
+                        <input type="text" name="finaliseDeadline" placeholder="e.g., within 2 weeks" required>
+                        <label class="question-label">Are you exploring other planners?</label>
+                        <div class="multi-option-group">
+                            <label class="radio-label"><input type="radio" name="otherPlanners" value="Yes"> Yes</label>
+                            <label class="radio-label"><input type="radio" name="otherPlanners" value="No" checked> No</label>
+                        </div>
+                        <label class="question-label" style="margin-top: 1rem;">Interested in sustainable options?</label>
+                        <div class="multi-option-group">
+                            <label class="radio-label"><input type="radio" name="sustainableWedding" value="Yes"> Yes</label>
+                            <label class="radio-label"><input type="radio" name="sustainableWedding" value="No" checked> No</label>
+                        </div>
                     </div>
-                    <div id="reachOutOtherInput" style="display: none; margin-top: 10px;">
-                        <input type="text" id="reachOutOtherText" placeholder="Please specify">
+
+                    <div class="form-card">
+                        <div class="card-title"><i class="fas fa-heart"></i> How did you find us?</div>
+                        <div class="multi-option-group">
+                            <label class="checkbox-label"><input type="checkbox" name="reachOutReason" value="Social Media"> Social Media</label>
+                            <label class="checkbox-label"><input type="checkbox" name="reachOutReason" value="Google Search"> Google Search</label>
+                            <label class="checkbox-label"><input type="checkbox" name="reachOutReason" value="Friend Referral"> Friend Referral</label>
+                            <label class="checkbox-label"><input type="checkbox" name="reachOutReason" value="Previous Client"> Previous Client</label>
+                            <label class="checkbox-label"><input type="checkbox" name="reachOutReason" value="Online Ad"> Online Ad</label>
+                            <label class="checkbox-label"><input type="checkbox" name="reachOutReason" value="Other" id="reachOutOtherCheckbox"> Other</label>
+                        </div>
+                        <div id="reachOutOtherInput" style="display: none; margin-top: 10px;">
+                            <input type="text" id="reachOutOtherText" placeholder="Tell us how you found us">
+                        </div>
+                    </div>
+
+                    <div class="form-card">
+                        <div class="card-title"><i class="fas fa-file-alt"></i> Review your plan</div>
+                        <div class="summary-preview" id="summaryPreview"></div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit your plan</button>
+                        </div>
+                        <div id="formStatus" class="status-message"></div>
                     </div>
                 </div>
 
-                <!-- Review & Submit -->
-                <div class="form-card">
-                    <div class="card-title"><i class="fas fa-gem"></i> Review & Submit</div>
-                    <p class="priority-sub">Please review your details before submitting.</p>
-                    <div class="summary-preview" id="summaryPreview"></div>
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit & Send</button>
-                    </div>
-                    <div id="formStatus" class="status-message"></div>
+                <div class="form-navigation">
+                    <button type="button" id="prevBtn" class="nav-btn" disabled><i class = "fas fa-arrow-left"></i> Back</button>
+                    <button type="button" id="nextBtn" class="nav-btn">Continue <i class = "fas fa-arrow-right"></i></button>
                 </div>
-            </div>
+            </form>
+        </div>
 
-            <div class="form-navigation">
-                <button type="button" id="prevBtn" class="nav-btn" disabled><i class="fas fa-arrow-left"></i> Previous</button>
-                <button type="button" id="nextBtn" class="nav-btn">Next <i class="fas fa-arrow-right"></i></button>
-            </div>
-        </form>
-
+        <!-- Footer -->
         <footer class="footer">
-            <div class="footer-content">
-                <p class="footer-thanks">✨ Thank you for choosing Oh Yes Events ✨</p>
-                <p class="footer-timing">⏰ Our team will contact you within 24 hours</p>
-                <div class="footer-links">
-                    <a href="https://ohyesevents.com/" target="_blank" class="footer-link"><i class="fas fa-globe"></i> ohyesevents.com</a>
-                    <a href="https://www.linkedin.com/company/ohyeseventsofficial/" target="_blank" class="footer-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Oh Yes Events</h4>
+                    <p class="footer-tagline">Private, Chennai, India & Dubai, UAE</p>
                 </div>
-                <p class="footer-copyright">© 2026 Oh Yes Events | Let's create magic!</p>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul class="contact-list">
+                        <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/ohyeseventsofficial" target="_blank">Instagram</a></li>
+                        <li><i class="fab fa-linkedin-in"></i> <a href="https://www.linkedin.com/company/ohyeseventsofficial/" target="_blank">LinkedIn</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@ohyesevents.com">info@ohyesevents.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Oh Yes Events</p>
             </div>
         </footer>
     </div>
